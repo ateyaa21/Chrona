@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { stories } from "../data/stories";
+import { stories } from "../../data/periods/stories/stories";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function StoriesSection() {
@@ -14,8 +14,7 @@ export default function StoriesSection() {
   return (
     <section className="bg-black text-white py-24">
       <div className="max-w-7xl mx-auto px-6 space-y-16">
-  
-        {/* HEADER */}
+
         <div className="max-w-2xl space-y-4">
           <p className="text-xs text-white/40 uppercase tracking-[0.4em]">
             Explorer
@@ -30,12 +29,10 @@ export default function StoriesSection() {
           </p>
         </div>
   
-        {/* CONTENT */}
         <div className="relative min-h-[500px]">
   
           <AnimatePresence mode="wait">
   
-            {/* LEVEL 1 */}
             {selected === null && (
               <motion.div
                 key="stories"
@@ -68,7 +65,6 @@ export default function StoriesSection() {
               </motion.div>
             )}
   
-            {/* LEVEL 2 */}
             {selected !== null && stories[selected] && (
               <motion.div
                 key="events"
@@ -78,8 +74,7 @@ export default function StoriesSection() {
                 transition={{ duration: 0.4 }}
                 className="space-y-6"
               >
-  
-                {/* BACK */}
+
                 <button
                   onClick={() => setSelected(null)}
                   className="text-sm text-gray-400 hover:text-white transition"
@@ -91,7 +86,6 @@ export default function StoriesSection() {
   
                   {stories[selected].items?.map((item, i) => {
   
-                    // 🔥 sécurité navigation
                     if (!item.slug) return null;
   
                     return (

@@ -1,82 +1,116 @@
-# 🕰️ Chrona
+Chrona
 
-Chrona is a modern web application designed to explore history through immersive visuals, structured timelines, and curated events.
+Chrona is a web application designed to explore history through structured timelines, curated events, and a strong visual approach.
 
-Built with a focus on clean UI, smooth animations, and intuitive navigation, Chrona transforms historical learning into an engaging digital experience.
+The project focuses on delivering a clear and immersive way to navigate historical periods, combining data-driven architecture with modern UI patterns.
 
----
+⸻
 
-## ✨ Features
+Overview
 
-- 📜 Historical Events Explorer  
-  Browse major events from Antiquity to modern revolutions.
+Chrona allows users to:
 
-- 🧭 Structured Periods  
-  Navigate through key eras: Antiquity, Middle Ages, Rebirth, Revolutions.
+* Navigate through major historical periods
+* Explore key events with detailed contextual pages
+* Discover influential figures
+* Understand historical progression through structured timelines
 
-- 🧑‍🎓 Figures Section  
-  Discover influential historical figures and their impact.
+The application emphasizes clarity, hierarchy, and interaction rather than static content.
 
-- 🗺️ History Atlas (Stories)  
-  Explore civilizations through curated story groups.
+⸻
 
-- 🎞️ Immersive UI  
-  Smooth animations powered by Framer Motion.
+Features
 
-- 📱 Responsive Design  
-  Optimized for mobile, tablet, and desktop.
+Period-Based Navigation
 
----
+History is organized into distinct eras, each acting as an entry point into a curated set of events.
 
-## 🛠️ Tech Stack
+Event Pages
 
-- React (Vite)
-- Tailwind CSS
-- Framer Motion
-- React Router
+Each event is structured with:
 
----
+* introduction
+* key highlights
+* contextual sections
+* facts
+* timeline (when applicable)
 
-## 🚀 Getting Started
+Figures
 
-bash # Install dependencies npm install  # Run development server npm run dev 
+Dedicated pages for historical figures, focusing on influence, role, and legacy.
 
----
+Interactive UI
 
-## 📁 Project Structure
+* smooth transitions
+* hover interactions
+* timeline-based layouts
 
-src/  ├── components/  ├── pages/  ├── data/  │    ├── events/  │    ├── figures.js  │    ├── stories.js  ├── App.jsx  └── main.jsx
+Responsive Design
 
----
+Optimized for all screen sizes.
 
-## 🎯 Philosophy
+⸻
 
-Chrona is not just about listing historical facts.
+Technical Stack
 
-It focuses on:
+* React (Vite)
+* Tailwind CSS
+* Framer Motion
+* React Router
 
-- Understanding the evolution of civilizations
-- Highlighting connections between events
-- Delivering a visual and interactive experience
+⸻
 
----
+Architecture
 
-## 📌 Roadmap
+The project follows a data-driven structure.
 
-- [ ] Advanced timeline interactions  
-- [ ] Search & filtering system  
-- [ ] Audio / immersive storytelling  
-- [ ] More historical data expansion  
+src/
+├── components/
+├── pages/
+├── data/
+│   ├── events/
+│   ├── figures/
+│   ├── timelines/
+├── routes/
+├── App.jsx
+└── main.jsx
 
----
+All content is defined through structured objects, allowing the UI to remain reusable and scalable.
 
-## 👤 Author
+⸻
 
-b3ktas  
-Frontend Developer focused on building clean and modern interfaces.
+Getting Started
 
----
+npm install
+npm run dev
 
-## 🌍 Vision
+⸻
 
-> "History is not just the past — it’s the foundation of everything we are to
+Design Principles
+
+* clear hierarchy
+* minimal and readable UI
+* separation between data and presentation
+* scalable component structure
+
+⸻
+
+Roadmap
+
+* advanced timeline interactions
+* search and filtering system
+* content expansion
+* performance improvements
+
+⸻
+
+Author
+
+b3ktas
+Frontend developer focused on modern interfaces and clean architecture.
+
+⸻
+
+Vision
+
+Chrona aims to present history as a structured and interactive system rather than a static collection of information.

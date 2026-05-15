@@ -1,28 +1,23 @@
 import { Route } from "react-router-dom";
 
 import Home from "../pages/Home";
-import Periods from "../pages/Periods";
-import Explore from "../pages/Explore";
 
-import MiddleAges from "../pages/MiddleAges";
-import Antiquity from "../pages/Antiquity";
-import Rebirth from "../pages/Rebirth";
-import Revolutions from "../pages/Revolutions";
+import MiddleAges from "../pages/sections/MiddleAges";
+import Antiquity from "../pages/sections/Antiquity";
+import Rebirth from "../pages/sections/Rebirth";
+import Revolutions from "../pages/sections/Revolutions";
 
-import FigurePage from "../pages/figures/FigurePage";
+import EventPage from "../pages/content/EventPage";
 
 export const MainRoutes = (
   <>
     <Route path="/" element={<Home />} />
-    <Route path="/periods" element={<Periods />} />
-    <Route path="/explore" element={<Explore />} />
 
-    <Route path="/periods/middle-ages" element={<MiddleAges />} />
-    <Route path="/periods/antiquity" element={<Antiquity />} />
-    <Route path="/periods/rebirth" element={<Rebirth />} />
-    <Route path="/periods/revolutions" element={<Revolutions />} />
+    <Route path="/sections/middle-ages" element={<MiddleAges />} />
+    <Route path="/sections/antiquity" element={<Antiquity />} />
+    <Route path="/sections/rebirth" element={<Rebirth />} />
+    <Route path="/sections/revolutions" element={<Revolutions />} />
 
-
-    <Route path="/figures/:slug" element={<FigurePage />} />
+    <Route path="/content/:slug" element={<EventPage />} />
   </>
 );

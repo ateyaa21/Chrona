@@ -10,11 +10,8 @@ export default function Navbar() {
 
   const links = [
     { name: "Home", path: "/" },
-    // { name: "Periods", path: "/periods" },
-    // { name: "Explore", path: "/explore" },
   ];
 
-  // 🔥 SCROLL BEHAVIOR
   useEffect(() => {
     let last = 0;
 
@@ -38,7 +35,6 @@ export default function Navbar() {
 
   return (
     <>
-      {/* NAVBAR */}
       <motion.div
         animate={{ y: visible ? 0 : -80, opacity: visible ? 1 : 0 }}
         transition={{ duration: 0.3 }}
@@ -46,7 +42,6 @@ export default function Navbar() {
       >
         <div className="flex items-center px-6 pt-6">
   
-          {/* MOBILE LOGO ONLY */}
           <div
             onClick={() => navigate("/")}
             className="flex items-center gap-3 cursor-pointer md:hidden"
@@ -56,14 +51,12 @@ export default function Navbar() {
             </span>
           </div>
   
-          {/* DESKTOP NAV (AVEC LOGO INTÉGRÉ) */}
           <div
             className="hidden md:flex items-center gap-14 ml-auto
             bg-black/50 backdrop-blur-2xl border border-white/10
             px-6 py-3 rounded-full shadow-lg"
           >
   
-            {/* LOGO INTÉGRÉ */}
             <div
               onClick={() => navigate("/")}
               className="flex items-center gap-2 pr-6 border-r border-white/10 cursor-pointer hover:opacity-80 transition"
@@ -73,7 +66,6 @@ export default function Navbar() {
               </span>
             </div>
   
-            {/* LINKS */}
             {links.map((link, i) => (
               <NavLink key={i} to={link.path}>
                 {({ isActive }) => (
@@ -103,7 +95,6 @@ export default function Navbar() {
   
           </div>
   
-          {/* MOBILE BUTTON */}
           <div className="ml-auto md:hidden">
             <button
               onClick={() => setOpen(true)}
@@ -116,11 +107,9 @@ export default function Navbar() {
         </div>
       </motion.div>
   
-      {/* MOBILE MENU */}
       <AnimatePresence>
         {open && (
           <>
-            {/* BACKDROP */}
             <motion.div
               onClick={() => setOpen(false)}
               initial={{ opacity: 0 }}
@@ -129,7 +118,6 @@ export default function Navbar() {
               className="fixed inset-0 z-40 bg-black/70 backdrop-blur-md"
             />
   
-            {/* PANEL */}
             <motion.div
               initial={{ y: -60, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}

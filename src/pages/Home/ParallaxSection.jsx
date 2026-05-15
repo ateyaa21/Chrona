@@ -14,12 +14,10 @@ export default function ParallaxSection() {
 
           const rect = el.getBoundingClientRect();
 
-          // 🔥 parallax stable (local, pas global)
           const offset = rect.top * 0.25;
 
           el.style.backgroundPosition = `center ${offset}px`;
 
-          // 🔥 micro effet cinéma (subtil)
           const opacity = Math.min(
             0.75,
             Math.max(0.55, 0.6 + rect.top * -0.0005)
@@ -55,13 +53,11 @@ export default function ParallaxSection() {
         backgroundAttachment: "fixed",
       }}
     >
-      {/* DARK OVERLAY (cinéma dynamique) */}
       <div
         className="absolute inset-0 bg-black"
         style={{ opacity: "var(--overlay-opacity, 0.6)" }}
       />
 
-      {/* GRADIENT DEPTH */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80" />
 
     </section>

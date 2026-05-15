@@ -53,7 +53,6 @@ export default function Hero() {
   return (
     <section className="relative h-screen w-full overflow-hidden bg-black text-white flex items-center">
   
-      {/* IMAGE */}
       <AnimatePresence>
         {slides.map((s, i) =>
           i === index && (
@@ -69,8 +68,7 @@ export default function Hero() {
           )
         )}
       </AnimatePresence>
-  
-      {/* OVERLAY RESPONSIVE */}
+
       <div className="absolute inset-0 bg-black/40 md:bg-black/70" />
   
       <div
@@ -80,11 +78,9 @@ export default function Hero() {
           md:bg-gradient-to-r md:from-black md:via-black/80 md:to-transparent
         "
       />
-  
-      {/* CONTENT */}
+
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 grid md:grid-cols-2 items-center">
   
-        {/* LEFT */}
         <div className="relative max-w-xl">
   
           <div className="h-[420px] flex flex-col justify-between">
@@ -99,7 +95,6 @@ export default function Hero() {
                 transition={{ duration: 0.4 }}
               >
   
-                {/* TOP */}
                 <div className="space-y-4">
   
                   <p className="text-xs uppercase tracking-[0.4em] text-white/40">
@@ -120,7 +115,6 @@ export default function Hero() {
   
                 </div>
   
-                {/* BODY */}
                 <div className="mt-4 flex-1 overflow-hidden">
   
                   <p className="text-gray-400 leading-relaxed line-clamp-4">
@@ -132,30 +126,10 @@ export default function Hero() {
               </motion.div>
             </AnimatePresence>
   
-            {/* CTA FIXE 
-            <div className="flex gap-4 pt-6">
-  
-             <button
-                onClick={() => navigate("/explore")}
-                className="px-6 py-3 bg-white text-black rounded-lg hover:bg-gray-200 transition"
-              >
-                Explore
-              </button>
-  
-              <button
-                onClick={() => navigate("/periods")}
-                className="px-6 py-3 border border-white/30 rounded-lg hover:bg-white hover:text-black transition"
-              >
-                Periods
-              </button>
-  
-            </div>*/}
-  
           </div>
   
         </div>
   
-        {/* RIGHT TIMELINE */}
         <div className="hidden md:flex flex-col items-end gap-6">
   
           {slides.map((item, i) => (
@@ -179,7 +153,6 @@ export default function Hero() {
   
       </div>
   
-      {/* PROGRESS BAR */}
       <div className="absolute bottom-0 left-0 w-full h-[2px] bg-white/10">
         <motion.div
           key={index}

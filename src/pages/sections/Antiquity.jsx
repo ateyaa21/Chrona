@@ -2,17 +2,22 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-import { events } from "../data/events";
-import { middleAgesEvents } from "../data/timelines/middleAges";
+import { events } from "../../data/events";
+import { antiquityTimeline } from "../../data/timelines/antiquity";
 
-export default function MiddleAges() {
+export default function Antiquity() {
   const navigate = useNavigate();
   const [hovered, setHovered] = useState(null);
 
-  const timeline = middleAgesEvents.map((item) => {
+  const timeline = antiquityTimeline
+  .map((item) => {
     const full = events.find((e) => e.slug === item.slug);
+
+    if (!full) return null;
+
     return { ...full, date: item.date };
-  });
+  })
+  .filter(Boolean);
 
   return (
     <motion.section
@@ -26,7 +31,7 @@ export default function MiddleAges() {
       <div className="relative h-[60vh] w-full overflow-hidden">
 
         <motion.img
-          src="https://preview.redd.it/on-this-day-seljuk-turks-beat-the-byzantian-empire-in-v0-zx2s7kgzwej51.jpg?width=640&crop=smart&auto=webp&s=35f113e782ef1c127bf5fff0f17c582412594a99"
+          src="https://medias.gazette-drouot.com/prod/medias/mediatheque/5773.jpg"
           className="absolute inset-0 w-full h-full object-cover"
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
@@ -54,7 +59,7 @@ export default function MiddleAges() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              Middle Ages
+              Antiquity
             </motion.h1>
 
             <motion.p
@@ -63,11 +68,13 @@ export default function MiddleAges() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
-              A time of kingdoms, faith and transformation shaping medieval Europe.
+              The foundations of civilization, where the first great empires,
+              cultures and systems of thought emerged.
             </motion.p>
 
           </div>
         </div>
+
       </div>
 
       <div className="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-16">
@@ -90,7 +97,7 @@ export default function MiddleAges() {
               {timeline.map((event) => (
                 <motion.div
                   key={event.slug}
-                  onClick={() => navigate(`/events/${event.slug}`)}
+                  onClick={() => navigate(`/content/${event.slug}`)}
                   onMouseEnter={() => setHovered(event)}
                   onMouseLeave={() => setHovered(null)}
                   initial={{ opacity: 0, y: 30 }}
@@ -99,13 +106,13 @@ export default function MiddleAges() {
                   className="flex items-start gap-6 cursor-pointer group"
                 >
 
-                  <div className="w-3 h-3 rounded-full bg-white group-hover:scale-125 transition" />
+                  <div className="w-3 h-3 rounded-full bg-white" />
 
                   <div className="flex gap-4 items-center">
 
                     <img
                       src={event.image}
-                      className="w-20 h-20 object-cover rounded-lg opacity-80 group-hover:opacity-100 transition"
+                      className="w-20 h-20 object-cover rounded-lg"
                     />
 
                     <div>
@@ -113,7 +120,7 @@ export default function MiddleAges() {
                         {event.date}
                       </p>
 
-                      <h3 className="text-lg md:text-xl font-semibold group-hover:text-white transition">
+                      <h3 className="text-lg font-semibold">
                         {event.title}
                       </h3>
 
@@ -151,19 +158,13 @@ export default function MiddleAges() {
                   animate={{ scale: 1 }}
                 />
 
-                <div className="space-y-3">
-                  <p className="text-sm text-gray-500">
-                    {hovered.date}
-                  </p>
+                <h2 className="text-2xl font-semibold">
+                  {hovered.title}
+                </h2>
 
-                  <h2 className="text-2xl font-semibold">
-                    {hovered.title}
-                  </h2>
-
-                  <p className="text-gray-400">
-                    {hovered.content}
-                  </p>
-                </div>
+                <p className="text-gray-400">
+                  {hovered.content}
+                </p>
 
               </motion.div>
             )}

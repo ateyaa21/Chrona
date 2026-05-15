@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { periods } from "../../data/periods";
+import { periods } from "../../data/periods/periods";
 import { motion } from "framer-motion";
 
 export default function Periods() {
@@ -31,8 +31,7 @@ export default function Periods() {
         className="max-w-7xl mx-auto px-6
         opacity-0 translate-y-10 transition-all duration-700"
       >
-  
-        {/* HEADER */}
+
         <div className="max-w-2xl space-y-5 mb-20">
           <p className="text-xs uppercase tracking-[0.4em] text-white/40">
             Timeline
@@ -47,13 +46,11 @@ export default function Periods() {
           </p>
         </div>
   
-        {/* MOSAIC GRID */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[180px]">
   
           {periods.map((period, i) => {
-            // 🎯 PATTERN
             const layout = [
-              "col-span-2 row-span-2", // big
+              "col-span-2 row-span-2",
               "col-span-1 row-span-1",
               "col-span-1 row-span-1",
               "col-span-2 row-span-1",
@@ -65,7 +62,7 @@ export default function Periods() {
             return (
               <motion.div
                 key={period.slug}
-                onClick={() => navigate(`/periods/${period.slug}`)}
+                onClick={() => navigate(`/sections/${period.slug}`)} // ✅ FIX ICI
   
                 whileHover={{ scale: 1.02 }}
   
@@ -75,32 +72,32 @@ export default function Periods() {
                 `}
               >
   
-                {/* IMAGE */}
                 <img
                   src={period.image}
                   className="absolute inset-0 w-full h-full object-cover
                   transition duration-700 group-hover:scale-110"
                 />
   
-                {/* OVERLAY */}
                 <div className="absolute inset-0 bg-black/60 group-hover:bg-black/70 transition" />
   
-                {/* LIGHT EFFECT */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100
                 bg-[radial-gradient(circle_at_50%_60%,rgba(255,255,255,0.15),transparent_70%)]
                 transition duration-500" />
   
-                {/* CONTENT */}
                 <div className="relative z-10 h-full flex flex-col justify-end p-5">
-  
-                  <h3 className="text-lg md:text-2xl font-semibold">
-                    {period.title}
-                  </h3>
-  
-                  <div className="mt-2 w-0 h-[2px] bg-white
-                  group-hover:w-10 transition-all duration-300" />
-  
-                </div>
+
+  <h3 className="text-lg md:text-2xl font-semibold">
+    {period.title}
+  </h3>
+
+  <p className="text-xs text-gray-400 mt-1">
+    {period.label}
+  </p>
+
+  <div className="mt-2 w-0 h-[2px] bg-white
+  group-hover:w-10 transition-all duration-300" />
+
+</div>
   
               </motion.div>
             );

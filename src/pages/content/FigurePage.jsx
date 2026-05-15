@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { figures } from "../../data/figures";
+import { figures } from "../../data/figures/figures";
 import { motion } from "framer-motion";
 
 export default function FigurePage() {

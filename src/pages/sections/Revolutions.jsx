@@ -2,14 +2,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-import { events } from "../data/events";
-import { antiquityTimeline } from "../data/timelines/antiquity";
+import { events } from "../../data/events";
+import { revolutionsEvents } from "../../data/timelines/revolutions.js";
 
-export default function Antiquity() {
+export default function Revolutions() {
   const navigate = useNavigate();
   const [hovered, setHovered] = useState(null);
 
-  const timeline = antiquityTimeline.map((item) => {
+  const timeline = revolutionsEvents.map((item) => {
     const full = events.find((e) => e.slug === item.slug);
     return { ...full, date: item.date };
   });
@@ -17,20 +17,17 @@ export default function Antiquity() {
   return (
     <motion.section
       className="bg-black text-white min-h-screen"
+      
       initial={{ opacity: 0, y: 40, scale: 0.98 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: -40, scale: 1.02 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
     >
 
       <div className="relative h-[60vh] w-full overflow-hidden">
-
-        <motion.img
-          src="https://medias.gazette-drouot.com/prod/medias/mediatheque/70435.jpg"
+        <img
+          src="https://i0.wp.com/blog.artsper.com/wp-content/uploads/2022/05/La-Liberte-guidant-le-peuple-–-Eugene-Delacroix-1830-e1652197478920.jpg?fit=1200%2C681&ssl=1"
           className="absolute inset-0 w-full h-full object-cover"
-          initial={{ scale: 1.1 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1 }}
         />
 
         <div className="absolute inset-0 bg-black/70" />
@@ -38,35 +35,15 @@ export default function Antiquity() {
 
         <div className="relative z-10 h-full flex items-end pb-12 px-6">
           <div className="max-w-5xl mx-auto w-full">
+            <p className="text-gray-400 text-sm mb-2">Historical Period</p>
 
-            <motion.p
-              className="text-gray-400 text-sm mb-2"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              Historical Period
-            </motion.p>
+            <h1 className="text-4xl md:text-6xl font-semibold">
+              Revolutions
+            </h1>
 
-            <motion.h1
-              className="text-4xl md:text-6xl font-semibold"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-            >
-              Antiquity
-            </motion.h1>
-
-            <motion.p
-              className="text-gray-300 mt-2 max-w-xl"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-            >
-              The foundations of civilization, where the first great empires,
-              cultures and systems of thought emerged.
-            </motion.p>
-
+            <p className="text-gray-300 mt-2 max-w-xl">
+              Moments that reshaped the world through conflict, innovation and power shifts.
+            </p>
           </div>
         </div>
       </div>
@@ -75,14 +52,9 @@ export default function Antiquity() {
 
         <div>
 
-          <motion.h2
-            className="text-3xl font-semibold mb-12"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-          >
+          <h2 className="text-3xl font-semibold mb-12">
             Key Moments
-          </motion.h2>
+          </h2>
 
           <div className="relative">
             <div className="absolute left-4 top-0 bottom-0 w-[1px] bg-white/10" />
@@ -91,7 +63,7 @@ export default function Antiquity() {
               {timeline.map((event) => (
                 <motion.div
                   key={event.slug}
-                  onClick={() => navigate(`/events/${event.slug}`)}
+                  onClick={() => navigate(`/content/${event.slug}`)}
                   onMouseEnter={() => setHovered(event)}
                   onMouseLeave={() => setHovered(null)}
                   initial={{ opacity: 0, y: 30 }}
@@ -100,13 +72,13 @@ export default function Antiquity() {
                   className="flex items-start gap-6 cursor-pointer group"
                 >
 
-                  <div className="w-3 h-3 rounded-full bg-white" />
+                  <div className="w-3 h-3 rounded-full bg-white group-hover:scale-125 transition" />
 
                   <div className="flex gap-4 items-center">
 
                     <img
                       src={event.image}
-                      className="w-20 h-20 object-cover rounded-lg"
+                      className="w-20 h-20 object-cover rounded-lg opacity-80 group-hover:opacity-100 transition"
                     />
 
                     <div>
@@ -114,7 +86,7 @@ export default function Antiquity() {
                         {event.date}
                       </p>
 
-                      <h3 className="text-lg font-semibold">
+                      <h3 className="text-lg md:text-xl font-semibold group-hover:text-white transition">
                         {event.title}
                       </h3>
 
@@ -128,6 +100,7 @@ export default function Antiquity() {
                 </motion.div>
               ))}
             </div>
+
           </div>
 
         </div>
@@ -145,20 +118,24 @@ export default function Antiquity() {
                 className="sticky top-32 space-y-6"
               >
 
-                <motion.img
+                <img
                   src={hovered.image}
                   className="w-full h-[260px] object-cover rounded-xl"
-                  initial={{ scale: 1.05 }}
-                  animate={{ scale: 1 }}
                 />
 
-                <h2 className="text-2xl font-semibold">
-                  {hovered.title}
-                </h2>
+                <div className="space-y-3">
+                  <p className="text-sm text-gray-500">
+                    {hovered.date}
+                  </p>
 
-                <p className="text-gray-400">
-                  {hovered.content}
-                </p>
+                  <h2 className="text-2xl font-semibold">
+                    {hovered.title}
+                  </h2>
+
+                  <p className="text-gray-400">
+                    {hovered.content}
+                  </p>
+                </div>
 
               </motion.div>
             )}

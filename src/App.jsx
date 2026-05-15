@@ -5,7 +5,6 @@ import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 
 import { MainRoutes } from "./routes/mainRoutes";
-import { EventsRoutes } from "./routes/eventsRoutes";
 
 export default function App() {
   return (
@@ -18,7 +17,6 @@ export default function App() {
       <main>
         <Routes>
           {MainRoutes}
-          {EventsRoutes}
         </Routes>
       </main>
 

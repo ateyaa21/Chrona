@@ -2,14 +2,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-import { events } from "../data/events";
-import { rebirthEvents } from "../data/timelines/rebirth";
+import { events } from "../../data/events";
+import { middleAgesEvents } from "../../data/timelines/middleAges.js";
 
-export default function Rebirth() {
+export default function MiddleAges() {
   const navigate = useNavigate();
   const [hovered, setHovered] = useState(null);
 
-  const timeline = rebirthEvents.map((item) => {
+  const timeline = middleAgesEvents.map((item) => {
     const full = events.find((e) => e.slug === item.slug);
     return { ...full, date: item.date };
   });
@@ -17,7 +17,6 @@ export default function Rebirth() {
   return (
     <motion.section
       className="bg-black text-white min-h-screen"
-
       initial={{ opacity: 0, y: 40, scale: 0.98 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: -40, scale: 1.02 }}
@@ -27,7 +26,7 @@ export default function Rebirth() {
       <div className="relative h-[60vh] w-full overflow-hidden">
 
         <motion.img
-          src="https://64.media.tumblr.com/eebc93a682174a081b4ea5a3fbfcb294/1cc7351d5b8d84f2-e0/s1280x1920/1c01d3531726be97d466b5c69406002c28a46019.pnj"
+          src="https://preview.redd.it/on-this-day-seljuk-turks-beat-the-byzantian-empire-in-v0-zx2s7kgzwej51.jpg?width=640&crop=smart&auto=webp&s=35f113e782ef1c127bf5fff0f17c582412594a99"
           className="absolute inset-0 w-full h-full object-cover"
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
@@ -55,7 +54,7 @@ export default function Rebirth() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              Renaissance
+              Middle Ages
             </motion.h1>
 
             <motion.p
@@ -64,7 +63,7 @@ export default function Rebirth() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
-              A rebirth of art, science and human thought.
+              A time of kingdoms, faith and transformation shaping medieval Europe.
             </motion.p>
 
           </div>
@@ -91,7 +90,7 @@ export default function Rebirth() {
               {timeline.map((event) => (
                 <motion.div
                   key={event.slug}
-                  onClick={() => navigate(`/events/${event.slug}`)}
+                  onClick={() => navigate(`/content/${event.slug}`)}
                   onMouseEnter={() => setHovered(event)}
                   onMouseLeave={() => setHovered(null)}
                   initial={{ opacity: 0, y: 30 }}
@@ -100,13 +99,13 @@ export default function Rebirth() {
                   className="flex items-start gap-6 cursor-pointer group"
                 >
 
-                  <div className="w-3 h-3 rounded-full bg-white" />
+                  <div className="w-3 h-3 rounded-full bg-white group-hover:scale-125 transition" />
 
                   <div className="flex gap-4 items-center">
 
                     <img
                       src={event.image}
-                      className="w-20 h-20 object-cover rounded-lg"
+                      className="w-20 h-20 object-cover rounded-lg opacity-80 group-hover:opacity-100 transition"
                     />
 
                     <div>
@@ -114,7 +113,7 @@ export default function Rebirth() {
                         {event.date}
                       </p>
 
-                      <h3 className="text-lg font-semibold">
+                      <h3 className="text-lg md:text-xl font-semibold group-hover:text-white transition">
                         {event.title}
                       </h3>
 
@@ -128,7 +127,6 @@ export default function Rebirth() {
                 </motion.div>
               ))}
             </div>
-
           </div>
 
         </div>
@@ -153,13 +151,19 @@ export default function Rebirth() {
                   animate={{ scale: 1 }}
                 />
 
-                <h2 className="text-2xl font-semibold">
-                  {hovered.title}
-                </h2>
+                <div className="space-y-3">
+                  <p className="text-sm text-gray-500">
+                    {hovered.date}
+                  </p>
 
-                <p className="text-gray-400">
-                  {hovered.content}
-                </p>
+                  <h2 className="text-2xl font-semibold">
+                    {hovered.title}
+                  </h2>
+
+                  <p className="text-gray-400">
+                    {hovered.content}
+                  </p>
+                </div>
 
               </motion.div>
             )}

@@ -28,8 +28,7 @@ export default function StorySection() {
         grid md:grid-cols-2 gap-12 md:gap-20 items-center
         opacity-0 translate-y-10 transition-all duration-700"
       >
-  
-        {/* IMAGE */}
+
         <div className="relative flex justify-center">
   
           <div className="
@@ -44,11 +43,9 @@ export default function StorySection() {
               src="https://panoramadelart.com/sites/default/files/filesPanorama/joconde_1.jpg"
               className="w-full h-full object-cover"
             />
-  
-            {/* OVERLAY */}
+
             <div className="absolute inset-0 bg-black/40" />
   
-            {/* GLOW */}
             <div className="absolute inset-0 opacity-0 hover:opacity-100
             bg-[radial-gradient(circle_at_50%_60%,rgba(255,255,255,0.12),transparent_70%)]
             transition duration-500" />
@@ -59,27 +56,26 @@ export default function StorySection() {
   
         <div className="space-y-6 max-w-xl">
 
-<p className="text-xs text-white/40 uppercase tracking-[0.4em]">
-  Renaissance
+        <p className="text-xs text-white/40 uppercase tracking-[0.4em]">
+  Historical Insight
 </p>
 
 <h2 className="text-3xl md:text-5xl font-semibold leading-tight">
-  The Mona Lisa
+  A Defining Moment
 </h2>
 
 <div className="w-12 h-[2px] bg-white/30" />
 
 <p className="text-gray-300 leading-relaxed">
-  Painted by Leonardo da Vinci in the early 16th century, the Mona Lisa
-  remains one of the most enigmatic and celebrated artworks in human history.
-  Her subtle expression and lifelike presence continue to intrigue viewers
-  across centuries.
+  This moment represents a key point in history, where ideas, power or innovation
+  reshaped the direction of civilizations. It reflects the complexity of human
+  ambition and the forces that drive change across time.
 </p>
 
 <p className="text-gray-400 leading-relaxed">
-  Beyond its technical mastery, the painting reflects the intellectual and
-  artistic spirit of the Renaissance — a time when observation, emotion,
-  and human identity became central to creation.
+  Beyond the event itself, it reveals deeper patterns — how societies evolve,
+  how influence spreads, and how certain moments leave a lasting imprint on
+  the world we know today.
 </p>
 
 </div>

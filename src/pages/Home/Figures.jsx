@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { figures } from "../../data/figures";
+import { figures } from "../../data/figures/figures";
 
 export default function Figures() {
   const ref = useRef(null);
@@ -44,7 +44,6 @@ export default function Figures() {
         opacity-0 translate-y-10 transition-all duration-700"
       >
 
-        {/* HEADER */}
         <div className="text-center space-y-3 sm:space-y-5">
           <h2 className="text-xl sm:text-3xl md:text-5xl font-semibold leading-tight">
             Stories of History
@@ -55,7 +54,6 @@ export default function Figures() {
           </p>
         </div>
 
-        {/* 🔥 NEW FILTER SYSTEM */}
         <div className="overflow-x-auto scrollbar-hide">
           <div className="flex gap-6 px-2 sm:px-0 min-w-max justify-start sm:justify-center">
 
@@ -72,7 +70,6 @@ export default function Figures() {
                   className="relative flex flex-col items-center pb-2"
                 >
 
-                  {/* LABEL */}
                   <span
                     className={`
                       text-sm transition-all duration-200
@@ -86,7 +83,6 @@ export default function Figures() {
                     {era}
                   </span>
 
-                  {/* UNDERLINE INDICATOR */}
                   {isActive && (
                     <motion.div
                       layoutId="filter-underline"
@@ -105,7 +101,6 @@ export default function Figures() {
           </div>
         </div>
 
-        {/* GRID */}
         <motion.div
           layout
           className="
@@ -162,7 +157,6 @@ export default function Figures() {
           </AnimatePresence>
         </motion.div>
 
-        {/* LOAD MORE */}
         {visible < filtered.length && (
           <div className="flex justify-center pt-4">
             <button

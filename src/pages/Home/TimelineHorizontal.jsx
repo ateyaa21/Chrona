@@ -50,8 +50,7 @@ export default function TimelineHorizontal() {
     <section className="bg-black text-white py-28">
   
       <div className="max-w-6xl mx-auto px-6 space-y-16">
-  
-        {/* HEADER */}
+
         <div className="max-w-xl space-y-4">
           <p className="text-xs text-white/40 uppercase tracking-[0.4em]">
             Timeline
@@ -61,8 +60,7 @@ export default function TimelineHorizontal() {
             Key Moments
           </h2>
         </div>
-  
-        {/* MAIN EVENT */}
+
         <div className="relative rounded-2xl overflow-hidden border border-white/10">
   
           <AnimatePresence mode="wait">
@@ -74,8 +72,7 @@ export default function TimelineHorizontal() {
               transition={{ duration: 0.5 }}
               className="relative h-[380px] md:h-[460px]"
             >
-  
-              {/* IMAGE */}
+
               <motion.img
                 src={active.image}
                 className="absolute inset-0 w-full h-full object-cover"
@@ -83,16 +80,13 @@ export default function TimelineHorizontal() {
                 animate={{ scale: 1 }}
                 transition={{ duration: 1 }}
               />
-  
-              {/* OVERLAY (plus riche) */}
+
               <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/80" />
   
-              {/* LIGHT DEPTH */}
               <div className="absolute inset-0
                 bg-[radial-gradient(circle_at_50%_30%,rgba(255,255,255,0.06),transparent_60%)]"
               />
-  
-              {/* CONTENT */}
+
               <div className="relative z-10 h-full flex flex-col justify-end p-10 space-y-4">
   
                 <p className="text-xs text-gray-400 tracking-[0.3em] uppercase">
@@ -109,8 +103,7 @@ export default function TimelineHorizontal() {
           </AnimatePresence>
   
         </div>
-  
-        {/* NAVIGATION */}
+
         <div className="flex justify-center gap-6 flex-wrap">
   
           {events.map((event, i) => {
@@ -132,8 +125,7 @@ export default function TimelineHorizontal() {
                 >
                   {event.year}
                 </span>
-  
-                {/* UNDERLINE ANIMATION */}
+
                 {isActive && (
                   <motion.div
                     layoutId="timeline-underline"
