@@ -5,9 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [visible, setVisible] = useState(true);
-
   const navigate = useNavigate();
-
   const links = [
     { name: "Home", path: "/" },
   ];
