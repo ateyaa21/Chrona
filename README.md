@@ -106,7 +106,7 @@ Roadmap
 
 Author
 
-b3ktas
+ateya
 Frontend developer focused on modern interfaces and clean architecture.
 
 ⸻
