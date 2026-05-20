@@ -5,10 +5,8 @@ import { figures } from "../../data/figures/figures";
 
 export default function EventPage() {
   const { slug } = useParams();
-
   const event = events.find((e) => e.slug === slug);
   const figure = figures.find((f) => f.slug === slug);
-
   const data = event || figure;
 
   if (!data) {
