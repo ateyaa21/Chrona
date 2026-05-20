@@ -6,10 +6,8 @@ import { figures } from "../../data/figures/figures";
 export default function Figures() {
   const ref = useRef(null);
   const navigate = useNavigate();
-
   const [filter, setFilter] = useState("All");
   const [visible, setVisible] = useState(8);
-
   const eras = ["All", "Antiquity", "Middle Ages", "Rebirth", "Revolutions"];
 
   const filtered =
