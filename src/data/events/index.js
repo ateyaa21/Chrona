@@ -8,7 +8,6 @@ import { frenchRevolution } from "./revolutions/french-revolution";
 export const events = [
   alexander,caesar,cleopatra,
 
-
   constantinople,
 
   leonardo,
