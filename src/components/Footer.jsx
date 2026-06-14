@@ -24,7 +24,7 @@ export default function Footer() {
                 text-white
               "
             >
-              CHRONA
+              {/* CHRONA  */} 
             </h2>
 
             <p
