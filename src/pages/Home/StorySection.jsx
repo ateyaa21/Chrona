@@ -6,87 +6,134 @@ export default function StorySection() {
   useEffect(() => {
     const el = ref.current;
 
+    if (!el) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          el.classList.remove("opacity-0", "translate-y-12");
+          el.classList.remove("opacity-0", "translate-y-8");
           el.classList.add("opacity-100", "translate-y-0");
         }
       },
-      { threshold: 0.2 }
+      {
+        threshold: 0.15,
+      }
     );
 
     observer.observe(el);
+
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section className="bg-black text-white py-28 md:py-40">
-
+    <section className="bg-[#111111] text-white py-20 md:py-24">
       <div
         ref={ref}
         className="
-          max-w-7xl mx-auto px-6
-          grid md:grid-cols-2 gap-16 md:gap-24 items-center
-          opacity-0 translate-y-12 transition-all duration-700
+          max-w-6xl
+          mx-auto
+          px-5
+          grid
+          md:grid-cols-[380px_1fr]
+          gap-10
+          md:gap-16
+          items-center
+          opacity-0
+          translate-y-8
+          transition-all
+          duration-700
         "
       >
-
         <div className="relative">
-
-          <div className="
-            relative w-full
-            aspect-[4/5]
-            rounded-3xl overflow-hidden
-            border border-white/10
-            shadow-[0_40px_120px_rgba(0,0,0,0.9)]
-          ">
-
+          <div
+            className="
+              relative
+              overflow-hidden
+              rounded-2xl
+              border
+              border-white/10
+              aspect-[4/5]
+            "
+          >
             <img
               src="https://panoramadelart.com/sites/default/files/filesPanorama/joconde_1.jpg"
-              className="w-full h-full object-cover scale-[1.03]"
+              alt="Historical artwork"
+              className="
+                w-full
+                h-full
+                object-cover
+                transition
+                duration-700
+                hover:scale-105
+              "
             />
 
-            <div className="absolute inset-0 bg-black/30" />
-
-            <div className="
-              absolute inset-0 opacity-0 hover:opacity-100
-              bg-[radial-gradient(circle_at_50%_60%,rgba(255,255,255,0.12),transparent_70%)]
-              transition duration-500
-            " />
-
+            <div className="absolute inset-0 bg-black/20" />
           </div>
-
         </div>
 
-        <div className="space-y-8 max-w-xl">
-
-          <p className="text-xs text-white/40 uppercase tracking-[0.4em]">
+        <div className="max-w-xl">
+          <p
+            className="
+              text-[10px]
+              uppercase
+              tracking-[0.45em]
+              text-[#C8A96B]
+            "
+          >
             Historical Insight
           </p>
 
-          <h2 className="text-4xl md:text-6xl font-semibold leading-tight">
+          <h2
+            className="
+              mt-4
+              text-3xl
+              md:text-5xl
+              leading-none
+            "
+          >
             A Defining Moment
           </h2>
 
-          <div className="w-14 h-[2px] bg-white/30" />
+          <div
+            className="
+              mt-5
+              w-10
+              h-[1px]
+              bg-[#C8A96B]
+            "
+          />
 
-          <p className="text-gray-300 leading-relaxed text-lg">
-            This moment represents a key point in history, where ideas, power or
-            innovation reshaped the direction of civilizations. It reflects the
-            complexity of human ambition and the forces that drive change across time.
+          <p
+            className="
+              mt-6
+              text-sm
+              md:text-base
+              leading-relaxed
+              text-white/65
+            "
+          >
+            This moment represents a turning point where
+            ideas, power and innovation transformed the
+            direction of entire civilizations.
           </p>
 
-          <p className="text-gray-400 leading-relaxed">
-            Beyond the event itself, it reveals deeper patterns — how societies
-            evolve, how influence spreads, and how certain moments leave a lasting
-            imprint on the world we know today.
+          <p
+            className="
+              mt-4
+              text-sm
+              md:text-base
+              leading-relaxed
+              text-white/45
+            "
+          >
+            Beyond the event itself, it reveals how
+            societies evolve, how influence spreads and
+            how history leaves a lasting mark across
+            generations.
           </p>
-
         </div>
-
       </div>
-
     </section>
   );
 }
