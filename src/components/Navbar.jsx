@@ -70,7 +70,7 @@ export default function Navbar() {
             cursor-pointer
           "
         >
-          CHRONA
+          {/* CHRONA  */} 
         </button>
 
         <div

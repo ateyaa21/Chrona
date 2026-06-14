@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/cinzel": "^5.2.8",
+    "@fontsource/cormorant-garamond": "^5.2.11",
     "@tailwindcss/vite": "^4.2.4",
     "framer-motion": "^12.40.0",
     "lenis": "^1.3.23",
