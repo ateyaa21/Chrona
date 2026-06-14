@@ -3,19 +3,20 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const slides = [
   {
+    date: "537",
+    title: "Hagia Sophia",
+    subtitle: "Byzantine symbol",
+    image:
+      "https://smarthistory.org/wp-content/uploads/2021/01/Deesis-scaled.jpg",
+  },
+  {
     date: "508 BC",
     title: "Birth of Democracy",
     subtitle: "Athens leads the way",
     image:
       "https://hpi.uq.edu.au/files/16723/atheniandemocracy_lowres.jpg",
   },
-  {
-    date: "537",
-    title: "Hagia Sophia",
-    subtitle: "Byzantine symbol",
-    image:
-      "https://www.meisterdrucke.ie/kunstwerke/1260px/Byzantine_-_The_Zoe_Mosaic_Hagia_Sophia_Istanbul_-_%28MeisterDrucke-1126241%29.jpg",
-  },
+  
   {
     date: "1095",
     title: "The Crusades",
