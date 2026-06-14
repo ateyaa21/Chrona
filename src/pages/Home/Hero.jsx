@@ -14,7 +14,7 @@ const slides = [
     title: "Birth of Democracy",
     subtitle: "Athens leads the way",
     image:
-      "https://hpi.uq.edu.au/files/16723/atheniandemocracy_lowres.jpg",
+      "https://miro.medium.com/v2/resize:fit:1358/format:webp/1*V10Jcrjgmg3uVlp756qHBg.jpeg",
   },
   
   {
@@ -22,7 +22,7 @@ const slides = [
     title: "The Crusades",
     subtitle: "Religious conflicts",
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Taking_of_Jerusalem_by_the_Crusaders%2C_15th_July_1099.jpg/1280px-Taking_of_Jerusalem_by_the_Crusaders%2C_15th_July_1099.jpg",
+      "https://gertitashkomd.com/wp-content/uploads/2025/05/Tashko-Crusades-1095-1291.jpg",
   },
   {
     date: "1789",
