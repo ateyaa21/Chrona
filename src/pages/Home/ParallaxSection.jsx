@@ -49,7 +49,7 @@ export default function ParallaxSection() {
         backgroundImage:
           "url(https://upload.wikimedia.org/wikipedia/commons/f/f3/Comnenus_mosaics_Hagia_Sophia.jpg)",
         backgroundSize: "cover",
-        backgroundPosition: "center 0px", // 🔥 important
+        backgroundPosition: "center 0px",
         backgroundAttachment: "fixed",
       }}
     >
